@@ -1,0 +1,22 @@
+{
+  "name": "ai-escape-room",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node --env-file-if-exists=.env server.js",
+    "test": "node --test",
+    "test:ui": "node scripts/check-ui.js",
+    "maas:check": "node --env-file-if-exists=.env scripts/evaluate.js --smoke",
+    "eval:puzzles": "node --env-file-if-exists=.env scripts/evaluate.js"
+  },
+  "engines": {
+    "node": ">=24.2.0"
+  },
+  "dependencies": {
+    "yaml": "^2.8.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.63.0"
+  }
+}

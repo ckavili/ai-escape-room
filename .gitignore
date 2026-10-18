@@ -1,0 +1,19 @@
+node_modules/
+
+# Local credentials and environment overrides; keep the public template.
+.env
+.env.*
+!.env.example
+
+# Local player sessions, telemetry, and model evaluation output.
+data/*.sqlite*
+data/evaluations/
+
+# Runtime logs and generated test output.
+*.log
+coverage/
+playwright-report/
+test-results/
+
+# macOS metadata.
+.DS_Store

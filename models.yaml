@@ -1,0 +1,49 @@
+game:
+  initial_budget: 40
+  context_cost_per_record: 1
+  hint_cost: 1
+  hint_model: fast
+  completion_points: 1000
+  coin_penalty: 20
+  wrong_attempt_penalty: 100
+models:
+  fast:
+    display_name: Fast Local
+    description: Quick help for a simple clue.
+    reasoning_token_accounting: separate
+    endpoint_model_name: qwen3-14b
+    chat_template_kwargs:
+      enable_thinking: false
+    type: local
+    game_cost: 2
+    pricing:
+      basis: demo
+      input_usd_per_million: 0.10
+      output_usd_per_million: 0.30
+  balanced:
+    display_name: Balanced
+    description: A little more reasoning power.
+    reasoning_token_accounting: separate
+    endpoint_model_name: gpt-oss-20b
+    type: local
+    game_cost: 5
+    pricing:
+      basis: demo
+      input_usd_per_million: 0.30
+      output_usd_per_million: 0.90
+  premium:
+    display_name: Premium
+    description: More power. Is it worth the coins?
+    reasoning_token_accounting: separate
+    endpoint_model_name: gpt-oss-120b
+    type: external
+    game_cost: 9
+    pricing:
+      basis: demo
+      input_usd_per_million: 1.00
+      output_usd_per_million: 3.00
+
+# Prices above are illustrative demo USD per million tokens, not MaaS billing rates.
+
+# Assumption for these MaaS deployments: completion_tokens excludes reasoning_tokens.
+# Use included for providers whose completion_tokens already includes reasoning.
