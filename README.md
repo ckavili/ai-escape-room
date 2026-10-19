@@ -1,3 +1,7 @@
+# Keynote challenge-board prototype
+
+The `keynote` branch also includes a separate 4×4 challenge-board experience. Run `npm run keynote`, then open http://localhost:3001 (players) or http://localhost:3001/stage (presenters). See [keynote/README.md](keynote/README.md) for demo/live modes and scope.
+
 # AI Escape Room — first playable slice
 
 Four short mobile-first puzzles, three configurable generic AI choices, a persistent 40-coin budget, server-side answer checking and scoring, and a live aggregate dashboard. Extends the Section 25 slice with sequential rooms and a hint mechanic. Section 26 remains the baseline for verification.
